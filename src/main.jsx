@@ -1,22 +1,14 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
-
 import { createStore } from 'redux'
-import reducer from './reducer'
+import counterReducer from './reducers/counterReducer'
 
-const store = createStore(reducer)
+const store = createStore(counterReducer)
 
 const App = () => {
-  const good = () => {
-    store.dispatch({
-      type: 'GOOD'
-    })
-  }
-
   return (
     <div>
-      <button onClick={good}>good</button> 
-      <button>ok</button> 
+      <button onClick={() => store.dispatch({ type: 'GOOD' })}>good</button>
+      <button>ok</button>
       <button>bad</button>
       <button>reset stats</button>
       <div>good {store.getState().good}</div>

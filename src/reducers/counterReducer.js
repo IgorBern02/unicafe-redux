@@ -13,11 +13,11 @@ const counterReducer = (state = initialState, action) => {
       return state
     case 'BAD':
       return state
-    case 'ZERO':
+    case 'RESET':
       return state
-    default: return state
+    default:
+      return state
   }
-  
 }
 
 export default counterReducer
